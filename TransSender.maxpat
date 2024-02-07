@@ -40,6 +40,50 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bubble" : 1,
+					"bubble_bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bubble_outlinecolor" : [ 0.76078431372549, 0.188235294117647, 0.188235294117647, 1.0 ],
+					"bubbleside" : 2,
+					"fontsize" : 14.0,
+					"id" : "obj-28",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 494.0, 392.0, 173.0, 72.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 498.0, 90.0, 173.0, 72.0 ],
+					"text" : "send all of your data to central computer \nport 7000",
+					"textcolor" : [ 0.109803921568627, 0.666666666666667, 0.337254901960784, 1.0 ],
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubble_bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bubble_outlinecolor" : [ 0.76078431372549, 0.188235294117647, 0.188235294117647, 1.0 ],
+					"bubbleside" : 2,
+					"fontsize" : 14.0,
+					"id" : "obj-25",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 493.0, 336.0, 173.0, 57.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 498.0, 27.0, 173.0, 57.0 ],
+					"text" : "prepend all your data with name/label/",
+					"textcolor" : [ 0.109803921568627, 0.666666666666667, 0.337254901960784, 1.0 ],
+					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-46",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -88,7 +132,7 @@
 					"patching_rect" : [ 95.0, 815.0, 173.0, 38.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 495.0, 184.0, 173.0, 38.0 ],
+					"presentation_rect" : [ 502.0, 312.5, 173.0, 38.0 ],
 					"text" : "click each time routing diagram is updated",
 					"textcolor" : [ 0.666666666666667, 0.270588235294118, 0.109803921568627, 1.0 ],
 					"textjustification" : 1
@@ -104,7 +148,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 855.0, 713.00001060962677, 172.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 480.0, 645.5, 172.0, 22.0 ],
+					"presentation_rect" : [ 498.5, 562.0, 172.0, 22.0 ],
 					"text" : "reset connections",
 					"textcolor" : [ 0.109803921568627, 0.666666666666667, 0.337254901960784, 1.0 ],
 					"textjustification" : 1
@@ -216,7 +260,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1806.400026917457581, 1643.200024485588074, 173.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 491.0, 109.0, 173.0, 38.0 ],
+					"presentation_rect" : [ 498.0, 237.5, 173.0, 38.0 ],
 					"text" : "update connections\n",
 					"textcolor" : [ 0.109803921568627, 0.666666666666667, 0.337254901960784, 1.0 ],
 					"textjustification" : 1
@@ -234,7 +278,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1774.400026440620422, 1672.800024926662445, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 548.0, 123.0, 59.0, 59.0 ]
+					"presentation_rect" : [ 555.0, 251.5, 59.0, 59.0 ]
 				}
 
 			}
@@ -2091,7 +2135,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1010.40001505613327, 748.000011146068573, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 541.0, 675.5, 50.0, 50.0 ]
+					"presentation_rect" : [ 559.5, 592.0, 50.0, 50.0 ]
 				}
 
 			}
@@ -2352,7 +2396,6 @@
 					"patching_rect" : [ 1027.200015306472778, 404.000006020069122, 198.0, 49.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 235.0, 41.0, 158.0, 24.0 ],
-					"text" : "localhost",
 					"wordwrap" : 0
 				}
 
@@ -2395,7 +2438,6 @@
 					"patching_rect" : [ 817.600012183189392, 404.000006020069122, 198.0, 49.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 26.0, 41.0, 158.0, 24.0 ],
-					"text" : "localhost",
 					"wordwrap" : 0
 				}
 
@@ -2411,8 +2453,70 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 0.0, 0.0, 100.0, 22.0 ],
+					"text" : "qmetro 20"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 0.0, 20.0, 100.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"legacy" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict vals"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 0.0, 40.0, 100.0, 22.0 ],
+					"text" : "dict.iter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 0.0, 60.0, 100.0, 22.0 ],
+					"text" : "route values"
+				}
+
+			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-97", 0 ],
 					"source" : [ "obj-100", 0 ]
@@ -2637,6 +2741,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-158", 0 ],
 					"source" : [ "obj-159", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -3646,6 +3757,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-131", 0 ],
 					"order" : 0,
 					"source" : [ "obj-92", 0 ]
@@ -3712,7 +3830,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "dictCross.js",
-				"bootpath" : "~/Desktop/UCSB_Winter24/Novak_261B",
+				"bootpath" : "~/Desktop/UCSB_Winter24/Novak_261B/TransSender",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1

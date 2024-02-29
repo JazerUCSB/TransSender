@@ -68,6 +68,7 @@ function makeRouting(){
     this.patcher.remove(strLs[i]);
     this.patcher.remove(recs[i]);
     this.patcher.remove(zlgs[i]);
+    this.patcher.remove(preps[i]);
     }
 }
     indexMaps = [];
@@ -75,6 +76,7 @@ function makeRouting(){
     strLs = [];
     recs = [];
     zlgs = [];
+    preps = [];
 
     qmet = this.patcher.newdefault(0, 0, "qmetro", 20);
     qmet.setattr("active", 1);
@@ -95,9 +97,12 @@ function makeRouting(){
     udps = [];
     var uOuts = uniq(outs);
     for(i=0;i<uOuts.length;i++){
-    var udp = this.patcher.newdefault(80, 20*i + 80, "udpsend", "localhost", outlabels[uOuts[i]]);
+    var udp = this.patcher.newdefault(80, 20*i + 160, "udpsend", "localhost", outlabels[uOuts[i]]);
     udps.push(udp);
-    
+
+    var prep = this.patcher.newdefault(80, 20*i + 140, "prepend", outlabels[uOuts[i]] + "/");
+    preps.push(prep);
+
     var recName = "indexRec" + i;
     var rec = this.patcher.newdefault(80, 20*i + 40, "receive", recName);
     recs.push(rec);
@@ -120,7 +125,8 @@ function makeRouting(){
     this.patcher.connect(rou, 0, indx, 0)
     this.patcher.connect(indx, 0, str, 0);
     this.patcher.connect(str, 0, strL, 0);
-    this.patcher.connect(strL, 0, udp, 0);
+    this.patcher.connect(strL, 0, prep, 0);
+    this.patcher.connect(prep, 0, udp, 0);
 
 
     var cons = [];

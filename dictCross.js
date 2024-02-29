@@ -137,12 +137,13 @@ function makeRouting(){
      }
 
     }
+    if(cons.length>0){
     for(j=0;j<cons.length;j++){
     messnamed(recName, cons[j]);
    
     }
     messnamed(recName, "bang");
-  
+    }
 
 
 }

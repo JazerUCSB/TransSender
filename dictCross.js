@@ -100,7 +100,7 @@ function makeRouting(){
     var udp = this.patcher.newdefault(80, 20*i + 160, "udpsend", "localhost", outlabels[uOuts[i]]);
     udps.push(udp);
 
-    var prep = this.patcher.newdefault(80, 20*i + 140, "prepend", outlabels[uOuts[i]] + "/");
+    var prep = this.patcher.newdefault(80, 20*i + 140, "prepend", "/" + outlabels[uOuts[i]]);
     preps.push(prep);
 
     var recName = "indexRec" + i;

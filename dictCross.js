@@ -103,7 +103,7 @@ function makeRouting(){
     var prep = this.patcher.newdefault(80, 20*i + 140, "prepend", "/" + outlabels[uOuts[i]]);
     preps.push(prep);
 
-    var recName = "indexRec" + i;
+    var recName = "indexRec" + (i+1);
     var rec = this.patcher.newdefault(80, 20*i + 40, "receive", recName);
     recs.push(rec);
     
@@ -131,13 +131,13 @@ function makeRouting(){
 
     var cons = [];
     for(m=0;m<ins.length;m++){
-        if(outs[m]=uOuts[i]){
+        if(outs[m]==uOuts[i]){
         cons.push(ins[m]);
         }
      }
 
     }
-    if(cons.length>0){
+    if(cons.length>=1){
     for(j=0;j<cons.length;j++){
     messnamed(recName, cons[j]);
    

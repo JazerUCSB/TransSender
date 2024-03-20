@@ -77,6 +77,7 @@ function makeRouting(){
     recs = [];
     zlgs = [];
     preps = [];
+    
 
     qmet = this.patcher.newdefault(0, 0, "qmetro", 20);
     qmet.setattr("active", 1);
@@ -95,7 +96,10 @@ function makeRouting(){
         this.patcher.remove(udps[i]);
     }
     udps = [];
+    var name = [];
     var uOuts = uniq(outs);
+    
+
     for(i=0;i<uOuts.length;i++){
     var udp = this.patcher.newdefault(80, 20*i + 160, "udpsend", "localhost", outlabels[uOuts[i]]);
     udps.push(udp);
@@ -104,6 +108,7 @@ function makeRouting(){
     preps.push(prep);
 
     var recName = "indexRec" + (i+1);
+    name.push(recName);
     var rec = this.patcher.newdefault(80, 20*i + 40, "receive", recName);
     recs.push(rec);
     
@@ -134,16 +139,17 @@ function makeRouting(){
         if(outs[m]==uOuts[i]){
         cons.push(ins[m]);
         }
+      
      }
+     if(cons.length>=1){
+        for(j=0;j<cons.length;j++){
+        messnamed(recName, cons[j]);
+        }
+        messnamed(recName, "bang");
+        }
 
     }
-    if(cons.length>=1){
-    for(j=0;j<cons.length;j++){
-    messnamed(recName, cons[j]);
-   
-    }
-    messnamed(recName, "bang");
-    }
+    
 
 
 }
